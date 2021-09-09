@@ -60,7 +60,6 @@ class QuizInterface:
         is_right = self.quiz.check_answer('False')
         self.give_feedback(is_right)
 
-
     def give_feedback(self, is_right):
         if is_right:
             self.canvas.config(bg='green')
@@ -68,3 +67,44 @@ class QuizInterface:
             self.canvas.config(bg='red')
         self.window.after(1000, self.get_next_question)
 
+
+class CategorySelectInterface:
+    def __init__(self):
+        self.selected_category = 'General'
+
+        self.window = Tk()
+        self.window.title('Quizzler')
+        self.window.config(bg=THEME_COLOR, padx=5, pady=170)
+
+        self.label = Label(text='Select a category', bg=THEME_COLOR, fg='white', font=FONT)
+        self.label.grid(row=0, column=0, columnspan=2, padx=20, pady=20)
+        
+        self.select_button_general = Button(text='General', width=15, border=0, command=self.general_selected)
+        self.select_button_general.grid(row=1, column=0, padx=20, pady=20)
+
+        self.select_button_cs = Button(text='Computer Science', width=15, border=0, command=self.cs_selected)
+        self.select_button_cs.grid(row=1, column=1, padx=20, pady=20)
+
+        self.select_button_history = Button(text='History', width=15, border=0, command=self.history_selected)
+        self.select_button_history.grid(row=2, column=0, padx=20, pady=20)
+
+        self.select_button_music = Button(text='Music', width=15, border=0, command=self.music_selected)
+        self.select_button_music.grid(row=2, column=1, padx=20, pady=20)
+
+        self.window.mainloop()
+
+    def general_selected(self):
+        self.selected_category = 'General'
+        self.window.destroy()
+
+    def cs_selected(self):
+        self.selected_category = 'Cs'
+        self.window.destroy()
+
+    def history_selected(self):
+        self.selected_category = 'History'
+        self.window.destroy()
+
+    def music_selected(self):
+        self.selected_category = 'Music'
+        self.window.destroy()
