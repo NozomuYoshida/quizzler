@@ -2,6 +2,7 @@
 This is a GUI-based quiz generator by Python.
 
 ## Function
+- Category selection
 - Generate true-or-false questions 10 times
 - Score the number of total of correct answers
 
