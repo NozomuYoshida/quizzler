@@ -1,5 +1,6 @@
 # quizzler
 This is a GUI-based quiz generator by Python.
+
 All quiz texts are from open trivia database: https://opentdb.com/api_config.php
 
 ## Function
